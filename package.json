@@ -1,0 +1,23 @@
+{
+  "name": "dxc-coding-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "prompt": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arindam-02121987/dxc-coding-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arindam-02121987/dxc-coding-challenge/issues"
+  },
+  "homepage": "https://github.com/arindam-02121987/dxc-coding-challenge#readme"
+}
