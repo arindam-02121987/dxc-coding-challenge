@@ -1,7 +1,7 @@
-var prompt = require('prompt');
+var inquirer = require('inquirer');
 
-function fibonacci(n) {
-    if (n > 2) {
+const fibonacci = (n) => {
+    if (n > 1) {
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
     else {
@@ -9,16 +9,22 @@ function fibonacci(n) {
     }
 }
 
-prompt.start();
-prompt.get('range', function (err, result) {
-    if (result.range <= 0) {
-        console.log('Enter value which is greater than 0.');
-    }
-    else {
-        for (let i = 0; i < result.range; i++) {
-            console.log(fibonacci(i));
-        }
-    }
-});
-
+module.exports.generateFibonacci = (question) => {
+    let resultSet = [];
+    return inquirer.prompt(question)
+        .then(result => {
+            if (result.range <= 0) {
+                return 'Enter value which is greater than 0.';
+            }
+            else if (!parseInt(result.range)) {
+                return 'Value cannot be a string/charecter.';
+            }
+            else {
+                for (let i = 0; i < result.range; i++) {
+                    resultSet.push(fibonacci(i));
+                }
+                return resultSet;
+            }
+        })
+}
 
